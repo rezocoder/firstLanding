@@ -1,0 +1,18 @@
+.calendar {
+    margin: 30px auto;
+    width: 950px;
+    height: 80px;
+    padding: 10px 40px;
+    border-radius: 15px;
+    background-color: rgba(0,0,0, 0.6);
+    box-shadow: rgba(83, 83, 83, 0.12) 0px 2px 4px 0px, rgba(160, 160, 160, 0.32) 0px 2px 16px 0px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    li {
+        color: #fff;
+        list-style-type: none;
+    }
+}

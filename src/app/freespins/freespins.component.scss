@@ -1,0 +1,37 @@
+.freespins {
+    width: 800px;
+    height: auto;
+    padding: 20px 80px;
+    border-radius: 15px;
+    margin: 30px auto;
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    font-weight:bolder;
+    line-height: 0.9;
+    text-align: center;
+    background-color: rgba(0,0,0, 0.6);
+    box-shadow: rgba(83, 83, 83, 0.12) 0px 2px 4px 0px, rgba(160, 160, 160, 0.32) 0px 2px 16px 0px;
+
+    span {
+        color: red;
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+}
+
+p, h1 {
+    position: absolute;
+}
+.en {
+    background-color: red;
+    width: 35px;
+height: 25px;
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+cursor: pointer;
+}
