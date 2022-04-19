@@ -1,15 +1,15 @@
 {
-    "header": 
+    "header":
         {
             "title": "The Home page",
             "welcome_text": "Your welcome text",
             "imgUrl": "../assets/images/car.jpg"
         },
-            
-    "freespins": 
+
+    "freespins":
         {
-            "offer_part1": "lorem ipsum dolor ",
-            "offer_part2": "500 1ლ FREESPINS ",
-            "offer_part3": "საჩუქრად ყოველდღე"           
+            "offer_part1": "lorem ipsum dolor lorem ipsum",
+            "offer_part2": "500 1Gel FREESPINS ",
+            "offer_part3": "also lorem ipsum"
         }
 }

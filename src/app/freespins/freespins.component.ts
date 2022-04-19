@@ -9,14 +9,12 @@ import { TranslateConfigService } from '../services/translate-config.service';
   styleUrls: ['./freespins.component.scss']
 })
 export class FreespinsComponent implements OnInit {
-  
+
 
   data!: IDate;
   constructor(private translateConfigService: TranslateConfigService, private httpRequestService: HttpRequestService) { }
 
-  changeDefaultLanguage(langType: string){
-    this.translateConfigService.changeLanguage(langType);
-    }
+
 
   ngOnInit(): void {
     this.httpRequestService.getData()

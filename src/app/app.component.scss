@@ -1,0 +1,24 @@
+.en, .ka {
+  width: 35px;
+  height: 25px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.flags {
+  position: absolute;
+  right: 15px;
+  width: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.en {
+  background-image: url("../assets/images/eng.webp");
+}
+
+.ka {
+  background-image: url("../assets/images/ka.jpg");
+}

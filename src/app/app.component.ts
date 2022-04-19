@@ -3,6 +3,8 @@ import { tick } from '@angular/core/testing';
 import { DBService } from './db/db.service';
 import { IBetslip } from './db/models/iticket';
 import { HttpRequestService } from './services/http-request.service';
+import { TranslateConfigService } from './services/translate-config.service';
+
 
 
 @Component({
@@ -13,10 +15,15 @@ import { HttpRequestService } from './services/http-request.service';
 export class AppComponent {
   title = 'json';
   betslip!: IBetslip[];
+  //translateConfigService: any;
   //countryList:{name:String, code:String}[]=countries;
 
+  changeDefaultLanguage(langType: string){
+    this.translateConfigService.changeLanguage(langType);
+    }
+
   constructor(
-    private httpRequestService: HttpRequestService
+    private translateConfigService: TranslateConfigService,private httpRequestService: HttpRequestService
   ) {}
 
   ngOnInit() {
