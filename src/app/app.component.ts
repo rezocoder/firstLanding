@@ -18,17 +18,17 @@ export class AppComponent {
   //translateConfigService: any;
   //countryList:{name:String, code:String}[]=countries;
 
-  changeDefaultLanguage(langType: string){
+  changeDefaultLanguage(langType: string) {
     this.translateConfigService.changeLanguage(langType);
-    }
+  }
 
   constructor(
-    private translateConfigService: TranslateConfigService,private httpRequestService: HttpRequestService
-  ) {}
+    private translateConfigService: TranslateConfigService, private httpRequestService: HttpRequestService
+  ) { }
 
   ngOnInit() {
     this.httpRequestService.getData()
-      .subscribe(data => console.log(data));
+      .subscribe(data => console.log(data.currentDate));
 
     // this.httpRequestService.getTickets('')
     //   .subscribe(data => {

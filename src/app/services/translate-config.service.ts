@@ -20,6 +20,4 @@ export class TranslateConfigService {
   translateType$():Observable<any> {
     return this._translateType$.asObservable()
   }
-
-
 }

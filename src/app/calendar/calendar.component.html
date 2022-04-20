@@ -1,12 +1,23 @@
 <div class="calendar">
-   <!--- <h1 *ngIf="data">{{data.currentDate}}</h1>-->
-   <div *ngIf="data">
-    <ul>
-        <li>{{data.days[0].date}}</li>
-        <li>{{data.days[1].date}}</li>
-        <li>{{data.days[2].date}}</li>
-        <li>{{data.days[3].date}}</li>
+  <div class="arrow left" (click)="slideLeft()">
+    <img src="../../assets/images/arrow_left.png" alt="">
+  </div>
+    <ul *ngIf="data">
+
+      <div class="calendar__container">
+        <li *ngFor="let day of data.days" [style.left]="sliderPos + 'px'" class="item">
+          <div class="item" [ngClass]="{'active': currentDate.slice(9, 11) == day.date.slice(8, 10), 'block':  currentDate.slice(9, 11) < day.date.slice(8, 10)}">
+            <div class="lock"></div>
+            <span  class="day">{{day.date | date: ' d '}}</span>
+            <span class="month">{{day.date | date: ' MMM '}}</span>
+          </div>
+        </li>
+      </div>
+
+
     </ul>
-   </div>
-    
+
+    <div class="arrow right" (click)="slideRight()">
+      <img src="../../assets/images/arrow_right.png" alt="">
+    </div>
 </div>
