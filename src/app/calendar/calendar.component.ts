@@ -52,14 +52,16 @@ export class CalendarComponent implements OnInit{
   }
 
   slideRight() {
+    let slider = document.querySelectorAll(".item")[0].clientWidth;
+      console.log(slider)
+
     if(this.data.days.length > this.sliderCount) {
       this.sliderCount += 1;
       console.log(this.sliderCount)
       console.log(this.data.days.length)
-      this.sliderPos -= 80;
+      this.sliderPos -= (slider + 22);
 
-      // let slider = document.querySelectorAll(".item")[0].clientWidth;
-      // console.log(slider)
+
     } else {
       this.sliderPos = 0;
       this.sliderCount = 5;
