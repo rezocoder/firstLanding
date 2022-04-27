@@ -1,9 +1,16 @@
+
 export interface ILeaderboard {
-  [name: string]: {
-    name: string;
-    point: number;
-    time: string;
-    prize: string;
-    extra: string;
-  }
+  myDates: ILeaders[];
+  days: ILeaders[];
+  currentDate: ILeaders[];
+  second: ILeaders[];
 }
+
+export interface ILeaders {
+  name: string;
+  point: number;
+  time: string;
+  prize: string;
+  extra: string;
+}
+

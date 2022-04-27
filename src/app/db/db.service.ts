@@ -33,13 +33,14 @@ export class DBService {
     return this.tickets[date].betslip;
   }
 
-  httpGet(route: string) {
+  httpGet(route: string, params?: any) {
     return this._isLoaded$
       .pipe(
         filter(isloaded => isloaded),
         switchMap(() => {
-          console.log(this._routerMap, this._routerMap[route])
-          return of(this._routerMap[route])
+          //console.log(this._routerMap, this._routerMap[route])
+          let result = params && params.date ? this._routerMap[route][params.date] : this._routerMap[route];
+          return of(result)
         })
       );
   }

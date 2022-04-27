@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { tick } from '@angular/core/testing';
+import { ICalendarsConfig } from './calendars/abstract/icards.config';
 import { DBService } from './db/db.service';
 import { IBetslip } from './db/models/iticket';
 import { HttpRequestService } from './services/http-request.service';
@@ -15,8 +16,31 @@ import { TranslateConfigService } from './services/translate-config.service';
 export class AppComponent {
   title = 'json';
   betslip!: IBetslip[];
-  //translateConfigService: any;
-  //countryList:{name:String, code:String}[]=countries;
+
+
+
+
+
+
+  playerDataDates: ICalendarsConfig = {
+    size: 'normal'
+  }
+
+  leaderboardDates: ICalendarsConfig = {
+    size: 'small'
+  }
+  //playerData?: IDate;
+
+
+
+
+
+
+
+
+
+
+
 
   changeDefaultLanguage(langType: string) {
     this.translateConfigService.changeLanguage(langType);
@@ -28,7 +52,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.httpRequestService.getData()
-      .subscribe(data => console.log(data.currentDate));
+      .subscribe(data => /*console.log(*/data.currentDate/*)*/);
 
     // this.httpRequestService.getTickets('')
     //   .subscribe(data => {

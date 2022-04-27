@@ -1,0 +1,20 @@
+<div class="leaderboard" *ngIf="leaders">
+  <div *ngFor="let member of leaders.second" class="leaderboard__members">
+      <div class="leaderboard__item" >
+        <li class="id">1</li>
+        <li>{{member.name}}</li>
+        <li>{{member.point}}</li>
+        <li>
+          {{member.time | date: 'shortTime'}}
+        </li>
+        <li class="prize">
+          {{member.prize}}
+          <img *ngIf="member.extra" src="{{member.extra}}" alt="">
+          <span *ngIf="!member.extra">0.000.000</span>
+        </li>
+      </div>
+
+
+
+  </div>
+</div>

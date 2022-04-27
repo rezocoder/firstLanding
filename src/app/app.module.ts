@@ -11,7 +11,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FreespinsComponent } from './freespins/freespins.component';
-import { CalendarComponent } from './calendar/calendar.component';
+import { CalendarComponent } from './calendars/calendar/calendar.component';
+import { SmallCalendarComponent } from './small-calendar/small-calendar.component';
+import { LeaderBoardComponent } from './leader-board/leader-board.component';
+import { CalendarContentComponent } from './calendar-content/calendar-content.component';
 
 export function rootLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -23,7 +26,10 @@ export function rootLoaderFactory(http: HttpClient) {
     HomeComponent,
     HeaderComponent,
     FreespinsComponent,
-    CalendarComponent
+    CalendarComponent,
+    SmallCalendarComponent,
+    LeaderBoardComponent,
+    CalendarContentComponent
   ],
   imports: [
     HttpClientModule,

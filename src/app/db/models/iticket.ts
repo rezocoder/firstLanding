@@ -3,10 +3,12 @@ import { OutcomeStates } from "./emums/outcome-states.enum";
 import { TicketStates } from "./emums/ticket-states.enum"
 
 export interface ITickets {
-  [name: string]: {
+  [name: string]: ITicket
+}
+
+export interface ITicket {
     state: TicketStates;
     betslip: IBetslip[];
-  }
 }
 
 export interface IBetslip {

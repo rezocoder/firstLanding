@@ -10,6 +10,6 @@ import { CalendarComponent } from './calendar.component';
 imports: [CommonModule, TranslateModule],
 declarations: [
   //HeaderComponent
-],
+  ],
 })
 export class CalendarModule {}

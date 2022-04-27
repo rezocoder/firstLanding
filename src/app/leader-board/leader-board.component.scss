@@ -1,0 +1,61 @@
+.leaderboard {
+  width: 1050px;
+  min-height: 500px;
+  background-color: rgb(7, 7, 7);
+  display: block;
+  margin: 50px auto;
+  border-radius: 20px;
+  padding: 20px 30px;
+  color: #fff;
+
+
+
+  &__members {
+    display: flex;
+    width: 100%;
+    gap: 25px;
+    justify-content: space-between;
+    padding: 0 10px;
+
+    &:nth-child(2n+1) {
+      background-color: rgb(22, 22, 22);
+      border-radius: 25px;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    //border: 1px solid red;
+    display: flex;
+    margin: 10px 0;
+    gap: 10px;
+
+    li {
+      width: 20%;
+      list-style: none;
+      display: flex;
+      height: 35px;
+      padding: 10px;
+      align-items: center;
+
+      img {
+        width: 80px;
+        height: 25px;
+      }
+    }
+    .id {
+      width: 10%;
+    }
+
+    .prize {
+      width: 30%;
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        color: green;
+      }
+    }
+  }
+}
+

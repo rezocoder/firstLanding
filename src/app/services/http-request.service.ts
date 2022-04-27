@@ -2,7 +2,8 @@ import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { DBService } from "../db/db.service";
 import { IDate } from "../db/models/idate";
-import { ITickets } from "../db/models/iticket";
+import { ILeaderboard } from "../db/models/ileaderboard";
+import { ITicket } from "../db/models/iticket";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class HttpRequestService {
   // 'api/GetLeaderboardDates'
   // 'api/GetLeaderboard'
   private _isLoaded = false;
+  GetLeaderboardDates: any;
   constructor(
     private dbService: DBService
   ) {
@@ -27,7 +29,11 @@ export class HttpRequestService {
     return this.dbService.httpGet('api/GetDates');
   }
 
-  getTickets(date: string): Observable<ITickets> {
+  getTickets(date: string): Observable<ITicket> {
     throw new Error('Implement this');
+  }
+
+  getLeaderboard(): Observable<ILeaderboard> {
+    return this.dbService.httpGet('api/GetLeaderboard');
   }
 }

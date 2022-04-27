@@ -5,4 +5,18 @@
 
 <app-header></app-header>
 <app-freespins>text</app-freespins>
-<app-calendar></app-calendar>
+
+
+<app-calendar
+    [config]="playerDataDates"
+>
+</app-calendar>
+
+<app-calendar
+[config]="leaderboardDates">
+
+</app-calendar>
+<app-small-calendar></app-small-calendar>
+
+
+<app-leader-board></app-leader-board>

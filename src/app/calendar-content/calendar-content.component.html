@@ -1,0 +1,6 @@
+  <div class="item"
+      [ngClass]="{'active': (currentDate.slice(9, 11) == day.date.slice(8, 10) && newItemValue ==  '') || newItemValue == day.date.slice(8, 10) || newItemValue == day.date.slice(9, 10),  'secondActive': 5 > 4,     'block':  currentDate.slice(9, 11) < day.date.slice(8, 10)}" *ngIf="day">
+      <div class="lock"></div>
+      <span class="day">{{day.date | date: ' d '}}</span>
+      <span class="month">{{day.date | date: ' MMM '}}</span>
+  </div>
