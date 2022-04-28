@@ -20,8 +20,6 @@ export class AppComponent {
 
 
 
-
-
   playerDataDates: ICalendarsConfig = {
     size: 'normal'
   }

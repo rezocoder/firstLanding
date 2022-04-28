@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IDate } from 'src/app/db/models/idate';
+import {  IDay } from 'src/app/db/models/idate';
 import { HttpRequestService } from 'src/app/services/http-request.service';
 import { ILeaderboard } from '../db/models/ileaderboard';
 import { TranslateConfigService } from '../services/translate-config.service';
@@ -10,7 +10,21 @@ import { TranslateConfigService } from '../services/translate-config.service';
   styleUrls: ['./leader-board.component.scss']
 })
 export class LeaderBoardComponent implements OnInit {
-  data!: IDate;
+  data!: IDay;
+  item = 'second';
+
+  // arr = [{
+  //   id:"1",
+  //   price:"130000.0",
+  //   user:55,
+  //  },
+  //  {
+  //    id:"2",
+  //    price:"140000.0",
+  //   user:55,
+  //  }]
+
+
 
   leaders!: ILeaderboard;
 
@@ -23,8 +37,12 @@ export class LeaderBoardComponent implements OnInit {
 
     this.httpRequestService.getLeaderboard()
     .subscribe(
-      leaders => console.log(leaders)
+      leaders => console.log( leaders)
     );
+  }
+
+  myArray() {
+    //console.log(this.arr[0].price)
   }
 
 }

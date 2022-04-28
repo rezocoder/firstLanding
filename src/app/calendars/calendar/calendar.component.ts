@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { IDate } from 'src/app/db/models/idate';
 import { HttpRequestService } from 'src/app/services/http-request.service';
@@ -14,11 +14,10 @@ import { ICalendarsConfig } from '.././abstract/icards.config';
 export class CalendarComponent implements OnInit{
   @Input() public config: ICalendarsConfig = { size: 'normal' };
   data!: IDate;
-  //days!: Observable<IDate[]>;
+  //itemSelected!: number;
 
 
   leaders!: ILeaderboard;
-  //person!: Observable<ILeaderboard[]>;
   leaderDates!: IDate;
 
 
@@ -79,8 +78,6 @@ export class CalendarComponent implements OnInit{
     if(this.config.size !== 'small') {
       if(this.data.days.length > this.sliderCount) {
         this.sliderCount += 1;
-        //console.log(this.sliderCount)
-        //console.log(this.data.days.length)
         this.sliderPos -= 80;
 
 
@@ -94,8 +91,6 @@ export class CalendarComponent implements OnInit{
       console.log(this.sliderCount)
       if(this.data.days.length > this.sliderCount - 4) {
         this.sliderCount += 1;
-        // console.log(this.sliderCount)
-        // console.log(this.data.days.length)
         this.smallSliderPos -= 100;
 
 
@@ -106,21 +101,24 @@ export class CalendarComponent implements OnInit{
 
   goCenter(event: any) {
     if(this.config.size !== 'small') {
+      let itemFullValue =  event.path[0].childNodes[3].innerText
+      console.log(itemFullValue)
+
+
       let itemValue = Number(event.path[0].childNodes[1].innerText)
       this.sliderCount = itemValue + 4;
       if(this.data.days.length > this.sliderCount && this.sliderCount >= 9) {
         this.sliderPos = - (itemValue - 5) * 80;
       }
       this.newItemValue =  JSON.stringify(itemValue);
-     // console.log( typeof(this.newItemValue))
     }
 
     else if(this.config.size === 'small') {
-      console.log(this)
+      let itemValue = Number(event.path[0].childNodes[1].innerText)
+      this.sliderCount = itemValue;
+      this.newItemValue =  JSON.stringify(itemValue);
+      console.log(this.sliderCount)
 
     }
-
-
-
   }
 }

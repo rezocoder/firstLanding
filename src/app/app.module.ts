@@ -15,6 +15,7 @@ import { CalendarComponent } from './calendars/calendar/calendar.component';
 import { SmallCalendarComponent } from './small-calendar/small-calendar.component';
 import { LeaderBoardComponent } from './leader-board/leader-board.component';
 import { CalendarContentComponent } from './calendar-content/calendar-content.component';
+import { FormsModule } from '@angular/forms';
 
 export function rootLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -33,6 +34,7 @@ export function rootLoaderFactory(http: HttpClient) {
   ],
   imports: [
     HttpClientModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     TranslateModule.forRoot({

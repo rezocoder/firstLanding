@@ -4,12 +4,13 @@
   </div>
   <ul *ngIf="data">
     <div class="calendar__container" *ngIf="config.size !== 'small'; else smallCards">
-      <li *ngFor="let day of data.days" [style.left]="sliderPos + 'px'" class="item" (click)="goCenter($event)">
+      <li *ngFor="let day of data.days" [style.left]="sliderPos + 'px'" class="item" (click)="goCenter($event)" [value]="day.date">
         <div class="item"
           [ngClass]="{'active': (currentDate.slice(9, 11) == day.date.slice(8, 10) && newItemValue ==  '') || newItemValue == day.date.slice(8, 10) || newItemValue == day.date.slice(9, 10),  'secondActive': 5 > 4,     'block':  currentDate.slice(9, 11) < day.date.slice(8, 10)}">
           <div class="lock"></div>
           <span class="day">{{day.date | date: ' d '}}</span>
           <span class="month">{{day.date | date: ' MMM '}}</span>
+          <span style="opacity: 0; position: absolute; z-index: -100;">{{day.date}}</span>
         </div>
       </li>
     </div>
@@ -18,7 +19,7 @@
 
   <ng-template #smallCards>
       <div class="calendar__container">
-        <li *ngFor="let day of data.days" [style.left]="(smallSliderPos - 40)  + 'px'" class="item" (click)="goCenter($event)">
+        <li *ngFor="let day of data.days" [style.left]="(smallSliderPos - 60)  + 'px'" class="item" (click)="goCenter($event)">
           <div class="item"
             [ngClass]="{'active': (currentDate.slice(9, 11) == day.date.slice(8, 10) && newItemValue ==  '') || newItemValue == day.date.slice(8, 10) || newItemValue == day.date.slice(9, 10),  'secondActive': 5 > 4,     'block':  currentDate.slice(9, 11) < day.date.slice(8, 10)}">
             <div class="lock"></div>
@@ -33,3 +34,4 @@
     <img src="../../assets/images/arrow_right.png" alt="">
   </div>
 </div>
+
